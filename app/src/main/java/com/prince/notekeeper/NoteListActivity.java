@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
+import java.util.List;
+
 public class NoteListActivity extends AppCompatActivity {
+    private NoteRecyclerAdapter mNoteRecyclerAdapter;
 
 //    private ArrayAdapter<NoteInfo> mAdapterNotes;
 
@@ -39,6 +42,7 @@ public class NoteListActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 //        mAdapterNotes.notifyDataSetChanged();
+        mNoteRecyclerAdapter.notifyDataSetChanged();
     }
 
     private void initializeDisplayContent() {
@@ -61,10 +65,16 @@ public class NoteListActivity extends AppCompatActivity {
         });
         */
 
-        // Enhancing the Android Application Experience
+        // Course2 - Enhancing the Android Application Experience
         // Module2 - Working with RecylcerView and CardView
         final RecyclerView recyclerNotes = findViewById(R.id.list_notes);
         recyclerNotes.setLayoutManager(new LinearLayoutManager(this));
+
+        // Course2 - Enhancing the Android Application Experience
+        // Module2 - Binding data to RecyclerView
+        List<NoteInfo> notes = DataManager.getInstance().getNotes();
+        mNoteRecyclerAdapter = new NoteRecyclerAdapter(this, notes);
+        recyclerNotes.setAdapter(mNoteRecyclerAdapter);
     }
 
 }
