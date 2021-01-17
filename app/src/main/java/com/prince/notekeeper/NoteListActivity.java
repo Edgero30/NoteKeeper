@@ -65,13 +65,13 @@ public class NoteListActivity extends AppCompatActivity {
         });
         */
 
-        // Course2 - Enhancing the Android Application Experience
-        // Module2 - Working with RecylcerView and CardView
+        // Course3 - Enhancing the Android Application Experience
+        // Module3 - Working with RecylcerView and CardView
         final RecyclerView recyclerNotes = findViewById(R.id.list_notes);
         recyclerNotes.setLayoutManager(new LinearLayoutManager(this));
 
-        // Course2 - Enhancing the Android Application Experience
-        // Module2 - Binding data to RecyclerView
+        // Course3 - Enhancing the Android Application Experience
+        // Module3 - Binding data to RecyclerView
         List<NoteInfo> notes = DataManager.getInstance().getNotes();
         mNoteRecyclerAdapter = new NoteRecyclerAdapter(this, notes);
         recyclerNotes.setAdapter(mNoteRecyclerAdapter);
