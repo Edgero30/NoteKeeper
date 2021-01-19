@@ -1,7 +1,6 @@
 package com.prince.notekeeper;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import org.junit.BeforeClass;
@@ -40,7 +39,7 @@ public class NoteCreationTest {
         onView(withId(R.id.fab)).perform(click());
 
         onView(withId(R.id.spinner_courses)).perform(click());
-        onData(allOf(instanceOf(CourseInfo.class), equalTo(course))).perform(click());
+        onData(allOf(instanceOf(NoteInfo.class), equalTo(course))).perform(click());
         onView(withId(R.id.spinner_courses)).check(matches(withSpinnerText(
                 containsString(course.getTitle()))));
 

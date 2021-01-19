@@ -163,7 +163,6 @@ public class NoteActivity extends AppCompatActivity {
 
     // Course3 - Enhancing the Android Application Experience
     // Module4 - Using the Options Menu
-
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         MenuItem item = menu.findItem(R.id.action_next);
@@ -184,7 +183,7 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     private void sendEmail() {
-        CourseInfo course = (CourseInfo) mSpinnerCourses.getSelectedItem();
+        NoteInfo course = (NoteInfo) mSpinnerCourses.getSelectedItem();
         String subject = mTextNoteTitle.getText().toString();
         String text = "Checkout what I learned in the Pluralsight course \"" +
                 course.getTitle() + "\"\n" + mTextNoteText.getText();
