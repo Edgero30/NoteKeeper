@@ -1,0 +1,65 @@
+[33mcommit df3e0dd4466a7a9e881775f42fbbcb5d0c677d03[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Wed Jan 27 18:03:14 2021 +0100
+
+    Reviewed and updated the SettingsActivity
+
+[33mcommit 9558a2ce26fdc5921d646950aa97e6ba0f678ccf[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Fri Jan 22 21:39:11 2021 +0100
+
+    Customise the user preference settings
+
+[33mcommit 48dff3a7a2ab1a6fdde4d44dbe08cd6b4d2ec8dd[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Thu Jan 21 22:38:10 2021 +0100
+
+    Customise UI with styles and themes
+
+[33mcommit 0237ff47c0c73a361e8c4c23fa9be1462adf920c[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Thu Jan 21 16:42:43 2021 +0100
+
+    Use drawable and values resources
+
+[33mcommit c82b229988df8b46f7f08bec4d7f7ffee5cdf62b[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Wed Jan 20 01:36:08 2021 +0100
+
+    Test the Menu, Navigation Drawer and RecyclerView UI behaviours
+
+[33mcommit 09c981581dd9981c48a8662a2b8680d1e7aa6129[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Tue Jan 19 16:51:25 2021 +0100
+
+    Include a navigation drawer with menus
+
+[33mcommit f0f7ea67503faa683acb5adff965d9edfd49849e[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Sun Jan 17 17:52:45 2021 +0100
+
+    Update the options menu to include action_next
+
+[33mcommit 34c194d9d9d9e1edefaa053e92e4074edf68a08a[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Sat Jan 16 11:44:23 2021 +0100
+
+    bind data to RecyclerView
+
+[33mcommit 0ac59664a32ade2a2aaf90fe626714582c2b0f7a[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Sat Jan 16 11:42:58 2021 +0100
+
+    bind data to RecyclerView
+
+[33mcommit 1b44df73eda1e2333900665823492d9fbb452796[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Thu Jan 14 13:01:58 2021 +0100
+
+    changed ListView to RecyclerView in NoteListActivity.java
+
+[33mcommit b5746a66b4989fde482a512e66bfe8a7785b8260[m
+Author: Prince Odia <princeodia@gmail.com>
+Date:   Wed Jan 13 09:59:22 2021 +0100
+
+    first commit

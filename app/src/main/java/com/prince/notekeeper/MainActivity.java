@@ -2,6 +2,8 @@ package com.prince.notekeeper;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity
     private LinearLayoutManager mNotesLayoutManager;
     private GridLayoutManager mCoursesLayoutManager;
     private CourseRecyclerAdapter mCourseRecyclerAdapter;
+    private NoteKeeperOpenHelper mDbOpenHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mDbOpenHelper = new NoteKeeperOpenHelper(this);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +66,12 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         initializeDisplayContent();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mDbOpenHelper.close();
+        super.onDestroy();
     }
 
     @Override
@@ -113,6 +123,7 @@ public class MainActivity extends AppCompatActivity
         mRecyclerItems.setLayoutManager(mNotesLayoutManager);
         mRecyclerItems.setAdapter(mNoteRecyclerAdapter);
 
+        SQLiteDatabase db = mDbOpenHelper.getReadableDatabase();
         selectNavigationMenuItem(R.id.nav_notes);
     }
 
