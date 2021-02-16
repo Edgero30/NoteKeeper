@@ -73,7 +73,7 @@ public class NoteListActivity extends AppCompatActivity {
         // Course3 - Enhancing the Android Application Experience
         // Module3 - Binding data to RecyclerView
         List<NoteInfo> notes = DataManager.getInstance().getNotes();
-        mNoteRecyclerAdapter = new NoteRecyclerAdapter(this, notes);
+//        mNoteRecyclerAdapter = new NoteRecyclerAdapter(this, notes);
         recyclerNotes.setAdapter(mNoteRecyclerAdapter);
     }
 
