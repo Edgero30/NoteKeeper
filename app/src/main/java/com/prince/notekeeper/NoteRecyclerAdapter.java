@@ -39,7 +39,7 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
     }
 
     public void changeCursor(Cursor cursor) {
-        if (mCursor != null && mCursor != cursor)
+        if (mCursor != null && mCursor != cursor) // Only close the cursor if it's not the same
             mCursor.close();
 
         mCursor = cursor;
@@ -55,8 +55,6 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-//        if (mCursor.isClosed())
-//            changeCursor();
         mCursor.moveToPosition(position);
         String course = mCursor.getString(mCoursePos);
         String noteTitle = mCursor.getString(mNoteTitlePos);
