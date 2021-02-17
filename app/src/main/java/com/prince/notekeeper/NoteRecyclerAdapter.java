@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.prince.notekeeper.NoteKeeperDatabaseContract.NoteInfoEntry;
@@ -38,8 +39,9 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
     }
 
     public void changeCursor(Cursor cursor) {
-        if (mCursor != null)
+        if (mCursor != null && mCursor != cursor)
             mCursor.close();
+
         mCursor = cursor;
         populateColumnPosition();
         notifyDataSetChanged();
@@ -53,6 +55,8 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+//        if (mCursor.isClosed())
+//            changeCursor();
         mCursor.moveToPosition(position);
         String course = mCursor.getString(mCoursePos);
         String noteTitle = mCursor.getString(mNoteTitlePos);
