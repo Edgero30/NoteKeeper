@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -21,6 +22,8 @@ import androidx.loader.content.Loader;
 
 import com.prince.notekeeper.NoteKeeperDatabaseContract.CourseInfoEntry;
 import com.prince.notekeeper.NoteKeeperDatabaseContract.NoteInfoEntry;
+
+import java.util.concurrent.Executor;
 
 import static androidx.loader.app.LoaderManager.getInstance;
 
@@ -166,11 +169,45 @@ public class NoteActivity extends AppCompatActivity
     }
 
     private void deleteNoteFromDatabase() {
-        String selection = NoteInfoEntry._ID + " = ?";
-        String[] selectionArgs =  {Integer.toString(mNoteId)};
+        final String selection = NoteInfoEntry._ID + " = ?";
+        final String[] selectionArgs =  {Integer.toString(mNoteId)};
 
-        SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
-        db.delete(NoteInfoEntry.TABLE_NAME, selection, selectionArgs);
+        // AsyncTask is a deprecated task
+        /*AsyncTask task = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
+                db.delete(NoteInfoEntry.TABLE_NAME, selection, selectionArgs);
+                return null;
+            }
+        };
+        task.execute();*/
+
+        Thread deleteTask = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
+                db.delete(NoteInfoEntry.TABLE_NAME, selection, selectionArgs);
+            }
+        });
+        deleteTask.start();
+
+        /*Executor task = new Executor() {
+            @Override
+            public void execute(Runnable runnable) {
+                new Thread(runnable).start();
+            }
+        };
+
+        Runnable deleteTask = new Runnable() {
+            @Override
+            public void run() {
+                SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
+                db.delete(NoteInfoEntry.TABLE_NAME, selection, selectionArgs);
+            }
+        };
+
+        task.execute(deleteTask);*/
     }
 
     @Override
@@ -197,17 +234,22 @@ public class NoteActivity extends AppCompatActivity
     }
 
     private void saveNoteToDatabase(String courseId, String noteTitle, String noteText) {
-        String selection = NoteInfoEntry._ID + " = ?";
-        String[] selectionArgs =  {Integer.toString(mNoteId)};
+        final String selection = NoteInfoEntry._ID + " = ?";
+        final String[] selectionArgs =  {Integer.toString(mNoteId)};
 
-        ContentValues values = new ContentValues();
+        final ContentValues values = new ContentValues();
         values.put(NoteInfoEntry.COLUMN_COURSE_ID, courseId);
         values.put(NoteInfoEntry.COLUMN_NOTE_TITLE, noteTitle);
         values.put(NoteInfoEntry.COLUMN_NOTE_TEXT, noteText);
 
-        SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
-        db.update(NoteInfoEntry.TABLE_NAME, values, selection, selectionArgs);
-
+        Thread saveTask = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
+                db.update(NoteInfoEntry.TABLE_NAME, values, selection, selectionArgs);
+            }
+        });
+        saveTask.start();
     }
 
     private void displayNote() {
@@ -252,12 +294,19 @@ public class NoteActivity extends AppCompatActivity
     }
 
     private void createNewNote() {
-        ContentValues values = new ContentValues();
+        final ContentValues values = new ContentValues();
         values.put(NoteInfoEntry.COLUMN_COURSE_ID, "");
         values.put(NoteInfoEntry.COLUMN_NOTE_TITLE, "");
         values.put(NoteInfoEntry.COLUMN_NOTE_TEXT, "");
-        SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
-        mNoteId = (int) db.insert(NoteInfoEntry.TABLE_NAME, null, values);
+
+        Thread createTask = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
+                mNoteId = (int) db.insert(NoteInfoEntry.TABLE_NAME, null, values);
+            }
+        });
+        createTask.start();
     }
 
     @Override
@@ -407,13 +456,3 @@ public class NoteActivity extends AppCompatActivity
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
