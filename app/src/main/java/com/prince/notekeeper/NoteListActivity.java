@@ -7,17 +7,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.List;
 
 public class NoteListActivity extends AppCompatActivity {
-    private NoteRecyclerAdapter mNoteRecyclerAdapter;
 
-//    private ArrayAdapter<NoteInfo> mAdapterNotes;
+    private ArrayAdapter<NoteInfo> mAdapterNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +41,11 @@ public class NoteListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        mAdapterNotes.notifyDataSetChanged();
-        mNoteRecyclerAdapter.notifyDataSetChanged();
+        mAdapterNotes.notifyDataSetChanged();
     }
 
     private void initializeDisplayContent() {
-        /*final ListView listNotes = findViewById(R.id.list_notes);
+        final ListView listNotes = findViewById(R.id.list_notes);
 
         List<NoteInfo> notes = DataManager.getInstance().getNotes();
         mAdapterNotes = new ArrayAdapter<>(this,
@@ -63,18 +62,7 @@ public class NoteListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        */
 
-        // Course3 - Enhancing the Android Application Experience
-        // Module3 - Working with RecylcerView and CardView
-        final RecyclerView recyclerNotes = findViewById(R.id.list_notes);
-        recyclerNotes.setLayoutManager(new LinearLayoutManager(this));
-
-        // Course3 - Enhancing the Android Application Experience
-        // Module3 - Binding data to RecyclerView
-        List<NoteInfo> notes = DataManager.getInstance().getNotes();
-//        mNoteRecyclerAdapter = new NoteRecyclerAdapter(this, notes);
-        recyclerNotes.setAdapter(mNoteRecyclerAdapter);
     }
 
 }

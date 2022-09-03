@@ -5,46 +5,14 @@ import android.os.Bundle;
 import androidx.lifecycle.ViewModel;
 
 public class NoteActivityViewModel extends ViewModel {
-    public static final String ORIGINAL_NOTE_COURSE_ID = "com.prince.notekeeper.ORIGINAL_NOTE_COURSE_ID";
-    public static final String ORIGINAL_NOTE_TITLE = "com.prince.notekeeper.ORIGINAL_NOTE_TITLE";
-    public static final String ORIGINAL_NOTE_TEXT = "com.prince.notekeeper.ORIGINAL_NOTE_TEXT";
+    public static final String ORIGINAL_NOTE_COURSE_ID = "com.jwhh.notekeeper.ORIGINAL_NOTE_COURSE_ID";
+    public static final String ORIGINAL_NOTE_TITLE = "com.jwhh.notekeeper.ORIGINAL_NOTE_TITLE";
+    public static final String ORIGINAL_NOTE_TEXT = "com.jwhh.notekeeper.ORIGINAL_NOTE_TEXT";
 
-    private String mOriginalNoteCourseId;
-    private String mOriginalNoteTitle;
-    private String mOriginalNoteText;
-    private boolean mIsNewlyCreated = true;
-
-    public String getOriginalNoteCourseId() {
-        return mOriginalNoteCourseId;
-    }
-
-    public void setOriginalNoteCourseId(String originalNoteCourseId) {
-        mOriginalNoteCourseId = originalNoteCourseId;
-    }
-
-    public String getOriginalNoteTitle() {
-        return mOriginalNoteTitle;
-    }
-
-    public void setOriginalNoteTitle(String originalNoteTitle) {
-        mOriginalNoteTitle = originalNoteTitle;
-    }
-
-    public String getOriginalNoteText() {
-        return mOriginalNoteText;
-    }
-
-    public void setOriginalNoteText(String originalNoteText) {
-        mOriginalNoteText = originalNoteText;
-    }
-
-    public boolean isNewlyCreated() {
-        return mIsNewlyCreated;
-    }
-
-    public void setNewlyCreated(boolean newlyCreated) {
-        mIsNewlyCreated = newlyCreated;
-    }
+    public String mOriginalNoteCourseId;
+    public String mOriginalNoteTitle;
+    public String mOriginalNoteText;
+    public boolean mIsNewlyCreated = true;
 
     public void saveState(Bundle outState) {
         outState.putString(ORIGINAL_NOTE_COURSE_ID, mOriginalNoteCourseId);
