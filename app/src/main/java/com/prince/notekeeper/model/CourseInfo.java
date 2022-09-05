@@ -24,6 +24,11 @@ public final class CourseInfo implements Parcelable {
         source.readTypedList(mModules, ModuleInfo.CREATOR);
     }
 
+    @Override
+    public String toString() {
+        return mTitle;
+    }
+
     public String getCourseId() {
         return mCourseId;
     }
@@ -56,11 +61,6 @@ public final class CourseInfo implements Parcelable {
                 return moduleInfo;
         }
         return null;
-    }
-
-    @Override
-    public String toString() {
-        return mTitle;
     }
 
     @Override
