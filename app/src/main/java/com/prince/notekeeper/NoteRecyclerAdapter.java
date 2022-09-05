@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.prince.notekeeper.NoteKeeperDatabaseContract.CourseInfoEntry;
 import com.prince.notekeeper.NoteKeeperDatabaseContract.NoteInfoEntry;
+import com.prince.notekeeper.view.NoteActivity;
 
 public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapter.ViewHolder> {
 

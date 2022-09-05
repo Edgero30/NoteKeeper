@@ -1,4 +1,4 @@
-package com.prince.notekeeper;
+package com.prince.notekeeper.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,12 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.prince.notekeeper.CourseInfo;
+import com.prince.notekeeper.DataManager;
+import com.prince.notekeeper.NoteActivityViewModel;
+import com.prince.notekeeper.NoteInfo;
+import com.prince.notekeeper.R;
 
 import java.util.List;
 
@@ -36,6 +42,7 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         ViewModelProvider viewModelProvider = new ViewModelProvider(getViewModelStore(),
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()));
         mViewModel = viewModelProvider.get(NoteActivityViewModel.class);
