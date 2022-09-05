@@ -1,4 +1,4 @@
-package com.prince.notekeeper;
+package com.prince.notekeeper.model;
 
 import java.util.ArrayList;
 import java.util.List;

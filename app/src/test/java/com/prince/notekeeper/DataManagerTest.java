@@ -6,6 +6,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.prince.notekeeper.model.CourseInfo;
+import com.prince.notekeeper.model.DataManager;
+import com.prince.notekeeper.model.NoteInfo;
+
 public class DataManagerTest {
     static DataManager sDataManager;
 

@@ -1,7 +1,6 @@
 package com.prince.notekeeper;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.prince.notekeeper.model.CourseInfo;
 
 import java.util.List;
 

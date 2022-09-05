@@ -21,6 +21,9 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.not;
 
+import com.prince.notekeeper.model.DataManager;
+import com.prince.notekeeper.model.NoteInfo;
+
 public class NextThroughNotesTest {
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =

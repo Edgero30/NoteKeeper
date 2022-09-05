@@ -15,6 +15,9 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.prince.notekeeper.NoteKeeperDatabaseContract.CourseInfoEntry;
 import com.prince.notekeeper.NoteKeeperDatabaseContract.NoteInfoEntry;
+import com.prince.notekeeper.model.CourseInfo;
+import com.prince.notekeeper.model.DataManager;
+import com.prince.notekeeper.model.NoteInfo;
 import com.prince.notekeeper.view.NoteActivity;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;

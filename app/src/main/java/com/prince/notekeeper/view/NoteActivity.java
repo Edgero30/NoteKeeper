@@ -14,10 +14,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.prince.notekeeper.CourseInfo;
-import com.prince.notekeeper.DataManager;
+import com.prince.notekeeper.model.CourseInfo;
+import com.prince.notekeeper.model.DataManager;
 import com.prince.notekeeper.NoteActivityViewModel;
-import com.prince.notekeeper.NoteInfo;
+import com.prince.notekeeper.model.NoteInfo;
 import com.prince.notekeeper.R;
 
 import java.util.List;
