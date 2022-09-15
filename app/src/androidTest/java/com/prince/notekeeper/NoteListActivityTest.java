@@ -28,6 +28,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 
+import com.prince.notekeeper.view.NoteListActivity;
+
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class NoteListActivityTest {

@@ -1,12 +1,12 @@
-package com.prince.notekeeper;
+package com.prince.notekeeper.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.prince.notekeeper.R;
 import com.prince.notekeeper.model.DataManager;
 import com.prince.notekeeper.model.NoteInfo;
-import com.prince.notekeeper.view.NoteActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
