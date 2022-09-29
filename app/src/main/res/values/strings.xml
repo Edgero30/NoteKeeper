@@ -31,6 +31,9 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="general_header">General</string>
     <string name="title_activity_settings">Settings</string>
+
+    <!-- Email   -->
     <string name="send_email">Send as email</string>
     <string name="cancel">Cancel</string>
+    <string name="email_message">Checkout what I learned in the Pluralsight course "\</string>
 </resources>

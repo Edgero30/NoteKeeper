@@ -156,7 +156,6 @@ public class NoteActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_send_mail) {
             sendEmail();
             return true;
@@ -171,7 +170,7 @@ public class NoteActivity extends AppCompatActivity {
     private void sendEmail() {
         CourseInfo course = (CourseInfo) mSpinnerCourses.getSelectedItem();
         String subject = mTextNoteTitle.getText().toString();
-        String text = "Checkout what I learned in the Pluralsight course \"" +
+        String text = getString(R.string.email_message) +
                 course.getTitle() + "\"\n" + mTextNoteText.getText();
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc2822");
