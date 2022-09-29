@@ -30,13 +30,8 @@ public class NoteListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(NoteListActivity.this, NoteActivity.class));
-
-            }
-        });
+        fab.setOnClickListener(view ->
+                startActivity(new Intent(NoteListActivity.this, NoteActivity.class)));
 
         initializeDisplayContent();
     }
@@ -56,14 +51,11 @@ public class NoteListActivity extends AppCompatActivity {
 
         listNotes.setAdapter(mAdapterNotes);
 
-        listNotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(NoteListActivity.this, NoteActivity.class);
+        listNotes.setOnItemClickListener((adapterView, view, position, id) -> {
+            Intent intent = new Intent(NoteListActivity.this, NoteActivity.class);
 //                NoteInfo note = (NoteInfo) listNotes.getItemAtPosition(position);
-                intent.putExtra(NoteActivity.NOTE_POSITION, position);
-                startActivity(intent);
-            }
+            intent.putExtra(NoteActivity.NOTE_POSITION, position);
+            startActivity(intent);
         });
 
     }
