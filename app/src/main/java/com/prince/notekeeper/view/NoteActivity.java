@@ -3,6 +3,7 @@ package com.prince.notekeeper.view;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
@@ -16,7 +17,7 @@ import android.widget.Spinner;
 
 import com.prince.notekeeper.model.CourseInfo;
 import com.prince.notekeeper.model.DataManager;
-import com.prince.notekeeper.NoteActivityViewModel;
+import com.prince.notekeeper.model.NoteActivityViewModel;
 import com.prince.notekeeper.model.NoteInfo;
 import com.prince.notekeeper.R;
 
@@ -103,10 +104,9 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        if(outState != null)
-            mViewModel.saveState(outState);
+        mViewModel.saveState(outState);
     }
 
     private void saveNote() {
