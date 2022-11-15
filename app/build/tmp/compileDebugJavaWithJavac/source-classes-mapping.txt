@@ -1,0 +1,47 @@
+com/prince/notekeeper/model/NoteInfo.java
+ com.prince.notekeeper.model.NoteInfo
+ com.prince.notekeeper.model.NoteInfo$1
+com/prince/notekeeper/MainActivity.java
+ com.prince.notekeeper.MainActivity
+ com.prince.notekeeper.MainActivity$1
+ com.prince.notekeeper.MainActivity$2
+com/prince/notekeeper/NoteKeeperOpenHelper.java
+ com.prince.notekeeper.NoteKeeperOpenHelper
+com/prince/notekeeper/NoteKeeperDatabaseContract.java
+ com.prince.notekeeper.NoteKeeperDatabaseContract
+ com.prince.notekeeper.NoteKeeperDatabaseContract$CourseInfoEntry
+ com.prince.notekeeper.NoteKeeperDatabaseContract$NoteInfoEntry
+com/prince/notekeeper/DatabaseDataWorker.java
+ com.prince.notekeeper.DatabaseDataWorker
+com/prince/notekeeper/BuildConfig.java
+ com.prince.notekeeper.BuildConfig
+com/prince/notekeeper/model/ModuleInfo.java
+ com.prince.notekeeper.model.ModuleInfo
+ com.prince.notekeeper.model.ModuleInfo$1
+com/prince/notekeeper/view/NoteListActivity.java
+ com.prince.notekeeper.view.NoteListActivity
+com/prince/notekeeper/model/DataManager.java
+ com.prince.notekeeper.model.DataManager
+com/prince/notekeeper/model/CourseInfo.java
+ com.prince.notekeeper.model.CourseInfo
+ com.prince.notekeeper.model.CourseInfo$1
+com/prince/notekeeper/SettingsActivity.java
+ com.prince.notekeeper.SettingsActivity
+ com.prince.notekeeper.SettingsActivity$1
+ com.prince.notekeeper.SettingsActivity$GeneralFragment
+ com.prince.notekeeper.SettingsActivity$HeaderFragment
+ com.prince.notekeeper.SettingsActivity$SyncFragment
+com/prince/notekeeper/NoteKeeperProvider.java
+ com.prince.notekeeper.NoteKeeperProvider
+com/prince/notekeeper/NoteRecyclerAdapter.java
+ com.prince.notekeeper.NoteRecyclerAdapter
+ com.prince.notekeeper.NoteRecyclerAdapter$ViewHolder
+ com.prince.notekeeper.NoteRecyclerAdapter$ViewHolder$1
+com/prince/notekeeper/CourseRecyclerAdapter.java
+ com.prince.notekeeper.CourseRecyclerAdapter
+ com.prince.notekeeper.CourseRecyclerAdapter$ViewHolder
+ com.prince.notekeeper.CourseRecyclerAdapter$ViewHolder$1
+com/prince/notekeeper/model/NoteActivityViewModel.java
+ com.prince.notekeeper.model.NoteActivityViewModel
+com/prince/notekeeper/view/NoteActivity.java
+ com.prince.notekeeper.view.NoteActivity
