@@ -30,7 +30,7 @@ public final class CourseInfo implements Parcelable {
     }
 
     public String getCourseId() {
-        return mCourseId;
+        return "2";
     }
 
     public String getTitle() {
