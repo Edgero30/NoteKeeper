@@ -8,6 +8,8 @@ public class DataManager {
 
     private List<CourseInfo> mCourses = new ArrayList<>();
     private List<NoteInfo> mNotes = new ArrayList<>();
+    
+    private List<CourseInfo> mTest = new ArrayList<>();
 
     public static DataManager getInstance() {
         if(ourInstance == null) {
@@ -50,11 +52,11 @@ public class DataManager {
     }
 
     public List<CourseInfo> getCourses() {
-        return mCourses;
+        return mTest;
     }
 
     public CourseInfo getCourse(String id) {
-        for (CourseInfo course : mCourses) {
+        for (CourseInfo course : mTest) {
             if (id.equals(course.getCourseId()))
                 return course;
         }
